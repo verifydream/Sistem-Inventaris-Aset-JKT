@@ -65,7 +65,7 @@ const ConditionChip = styled(Chip)(({ condition, theme }) => {
 
 const AssetCard = ({ asset, onDelete }) => {
   const { isAdminMode } = useAdminMode();
-  const { _id, name, owner, category, condition, images, acquisitionDate } = asset;
+  const { _id, name, owner, category, condition, images, acquisitionDate, location } = asset;
   
   // Format date
   const formattedDate = new Date(acquisitionDate).toLocaleDateString('id-ID', {
@@ -103,6 +103,11 @@ const AssetCard = ({ asset, onDelete }) => {
           <Typography variant="body2" color="text.secondary" gutterBottom>
             Kategori: {category}
           </Typography>
+          {location && (
+            <Typography variant="body2" color="text.secondary" gutterBottom>
+              Lokasi: {location.name || 'Tidak diketahui'}
+            </Typography>
+          )}
           <Typography variant="body2" color="text.secondary">
             Tanggal Perolehan: {formattedDate}
           </Typography>

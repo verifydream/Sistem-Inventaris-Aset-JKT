@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   Container,
   Typography,
@@ -168,7 +169,8 @@ const HomePage = () => {
               variant="contained" 
               color="secondary"
               size="large"
-              href="/admin/dashboard"
+              component={RouterLink}
+              to="/admin"
               sx={{ fontWeight: 'bold' }}
             >
               Buka Dashboard Admin
